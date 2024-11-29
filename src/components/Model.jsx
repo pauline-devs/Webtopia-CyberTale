@@ -16,7 +16,8 @@ export default function Model({ activeMenu }) {
   const opacity = useMotionValue(0);
 
   // Load all textures at the top level
-  const textures = useTexture(projects.map((project) => project.src));
+  const texturePaths = projects.map((project) => project.src);
+  const textures = useTexture(texturePaths);
 
   // Ensure at least one texture exists for scaling
   const { width, height } = textures[0]?.image || { width: 1, height: 1 };
@@ -30,8 +31,15 @@ export default function Model({ activeMenu }) {
     y: useMotionValue(0),
   };
 
+  const uniforms = useRef({
+    uDelta: { value: { x: 0, y: 0 } },
+    uAmplitude: { value: 0.0005 },
+    uTexture: { value: textures[0] },
+    uAlpha: { value: 0 },
+  });
+
   useEffect(() => {
-    if (activeMenu != null) {
+    if (activeMenu != null && textures[activeMenu]) {
       plane.current.material.uniforms.uTexture.value = textures[activeMenu];
       animate(opacity, 1, {
         duration: 0.2,
@@ -43,14 +51,7 @@ export default function Model({ activeMenu }) {
         onUpdate: (latest) => (plane.current.material.uniforms.uAlpha.value = latest),
       });
     }
-  }, [activeMenu]);
-
-  const uniforms = useRef({
-    uDelta: { value: { x: 0, y: 0 } },
-    uAmplitude: { value: 0.0005 },
-    uTexture: { value: textures[0] },
-    uAlpha: { value: 0 },
-  });
+  }, [activeMenu, textures, opacity]);
 
   useFrame(() => {
     const { x, y } = mouse;
@@ -90,3 +91,4 @@ export default function Model({ activeMenu }) {
     </motion.mesh>
   );
 }
+

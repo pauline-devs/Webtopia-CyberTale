@@ -5,7 +5,7 @@ import Projects from "@/components/Projects";
 import Cursor from "@/components/Cursor";
 import GradientCursor from "@/components/GradientCursor";
 import Footer from "@/components/Footer";
-import Lenis from 'lenis'
+import Lenis from 'lenis';
 
 export default function Home() {
 
