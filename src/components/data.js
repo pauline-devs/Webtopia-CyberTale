@@ -1,14 +1,18 @@
 export const projects = [
     {
-      title: "Tislit-N-Anzar",
+      title: "Cyber story 1",
       src: "/images/1.png"
     },
     {
-      title: "Earthquake",
+      title: "Cyber story 2",
       src: "/images/2.png"
     },
     {
-      title: "Dub Doobi Dubz",
+      title: "Random story 3",
       src: "/images/3.png"
+    },
+    {
+      title: "Random story 4",
+      src: "/images/4.png"
     },
 ]

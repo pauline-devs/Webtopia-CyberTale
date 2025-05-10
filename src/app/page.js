@@ -30,23 +30,26 @@ export default function Home() {
         <h1 onMouseOver={() => {setIsActive(true)}} 
             onMouseLeave={() => {setIsActive(false)}} 
             className="font-extrabold text-[4.5vw] text-center">
-            WEBTOPIA V.1
+            CYBERTALES
+            <br/>
+            ~
+            <br/>
+            A WEBTOPIA
         </h1>
         <Cursor isActive={isActive}/>
         {/* <GradientCursor isActive={isActive}/> */}
       </div>
       <div className="intro-subtitle text-center">
-        <p className="text-base p-3">
-          A Cyber-Artsy microcosm 
-          <br/>
-          as playgroud for my Next.js, WebGL & Blockchain learnings.
-        </p>
+      <p className="text-[0.85rem] w-[500px] px-[30px] mt-5 text-center mx-auto text-[#BCE4F2]">
+        This is the digital rough of a Cyber-Artsy microcosm,
+        envisioned as a playground for my next WebGL x storytelling explorations.
+      </p>
       
         <div className="h-[3vh] text-xs"></div>
-        <p className="text-xs">
-          Concept + website are destined to be fed
+        <p className="text-xs text-center">
+          Built to grow and improve alongside
           <br/>
-          & improved as my tech stack grows.
+          my evolving tech stack.
         </p>
       </div>
       <div className="h-[7vh]"></div>

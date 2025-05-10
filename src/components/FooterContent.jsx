@@ -23,14 +23,14 @@ export default function FooterContent() {
             onMouseOver={() => {setIsActive(true)}} 
             onMouseLeave={() => {setIsActive(false)}} 
         >
-          WEBTOPIA CYBERTALE
+          WEBTOPIA CYBERTALES
         </h1>
         <Cursor isActive={isActive}/>
-        <a className='mb-2 md:mb-2.5 lg:mb-3 text-xs md:text-base' 
-           href='https://beacons.ai/d.kutz' 
+        <a id='drummykutz' className='mb-2 md:mb-2.5 lg:mb-3 text-xs md:text-base' 
+           href='https://www.instagram.com/drummykutz/#' 
            target='_blank' 
            rel='noopener noreferrer'>
-            @drummykutz
+            @d.kutz
         </a>
     </div>
   )
